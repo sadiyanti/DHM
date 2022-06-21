@@ -1,0 +1,84 @@
+1.078522912
+428
+215
+152.742023
+-27.168009
+
+428
+215
+1
+1
+
+152.742023
+-27.168009
+
+86400
+
+2011
+2011
+1
+1
+
+300
+20
+0.65
+
+0.0200
+0.0060
+0.1493
+0.0001
+2.8502
+0.03
+
+6
+
+50
+
+0.16
+
+
+--- bwlow is sample
+1) Parameters for study area.
+int TopoScale = 10  // Topography scale. 1 means 3 second.
+int Col=120 //number of columns for study region. The value must be integer.
+int Row=60  // number of rows for study region. The value must be integer.
+double SWLON=138  // Longitude (degree) of South West (lower left) side of the study area.
+double SWLAT=35.5 // Latitude (degree) of South West (lower left) side of the study area.
+
+2) Parameters for input data.
+int ROFnum_col = 5; Number of column of input data
+int ROFnum_row = 6; Number of row of input data
+int pO_x = 1; Origin column number of input data. The default value is 1.
+              The value is used for reconizing for reading one-dimensional input data.
+int pO_y = 1; Origin row number of input data. The default value is 1.
+              The value is used for recognizing for reading one-dimensional input data.
+              For 1-dimensional input data, data file name for each grid is
+              supporsed to be (i=0, 1, ..., j=0, 1, ...)
+
+              ./input/%04d%02d_%03d_%03d_rain.dat", n_year, n_month, pO_x+i, pO_y+j
+
+double ROF_WLON = 137.8125; West side longitude of input data
+int InputData_Time_Step = 3600; // input data time step [sec]
+
+3) Parameters for simulation term.
+int startYear = 1979; // start year
+int endYear   = 1980; // end year
+int startMonth = 12;  // start month
+int endMonth   = 1;   // end month
+
+4) Parameters for finite difference condition.
+int Time_Step = wTime_Step; // similation time step [sec]
+int Nspace = wNspace;       // number of spatial divisions
+double Theta = wTheta;      // Weight value 0.5 < theta <= 1.0
+
+5) Parameters for kinematic wave model.
+double Man_slope = 0.5 // Manning�fs roughness coefficient for slope
+double Ka = 0.0046 // Hydraulic conductivity [m-s unit]
+double Da = 0.3440 // Depth of capillary and non-capillary soil layers [m]
+double Dm = 0.2875 // Depth of capillary soil layers [m]
+double Beta = 6.3486 // Exponent constant of unsaturated hydraulic conductivity [-]
+double Man_channel = 0.03 // Manning roughmess coefficient for channel [m-s unit]
+int Threshold_basin = 250 // grid accumulated number to differentiate slope and river
+
+6) Intinial runoff height for kinematic wave model.
+double initialROF=0.0;  //Initial runoff height (mm/hr)
